@@ -17,6 +17,6 @@
 # limitations under the License.
 #
 
-node[:x11][:packages].each do |x11_package|
+node['x11']['packages'].each do |x11_package|
   package x11_package
 end

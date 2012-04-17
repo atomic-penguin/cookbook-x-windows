@@ -17,9 +17,10 @@
 # limitations under the License.
 #
 
-if node[:platform] == "redhat"
-  if node[:platform_version].to_i == 5
-    default[:x11][:packages] = [
+case node['platform']
+when "redhat","centos","scientific","amazon"
+  if node['platform_version'].to_i == 5
+    default['x11']['packages'] = [
       "bitmap-fonts",
       "desktop-backgrounds-basic",
       "xorg-x11-drivers",
@@ -33,7 +34,14 @@ if node[:platform] == "redhat"
       "xorg-x11-server-Xorg",
       "xorg-x11-xauth",
       "xorg-x11-xfs",
-      "xorg-x11-xinit"
+      "xorg-x11-xinit",
+      "xorg-x11-twm",
+      "xterm"
     ]
   end
+else
+  default['x11']['packages'] = [
+    'xserver-xorg',
+    'xterm'
+  ]
 end
