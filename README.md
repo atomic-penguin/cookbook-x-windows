@@ -1,7 +1,10 @@
-= DESCRIPTION:
+Description
+===========
+
   This cookbook exists, only to satisfy pre-requisites for the Oracle cookbook on Enterprise Linux
 
-= LICENSE:
+License
+=======
 
 Copyright 2011, Eric G. Wolfe
 

@@ -18,27 +18,25 @@
 #
 
 case node['platform']
-when "redhat","centos","scientific","amazon"
-  if node['platform_version'].to_i == 5
-    default['x11']['packages'] = [
-      "bitmap-fonts",
-      "desktop-backgrounds-basic",
-      "xorg-x11-drivers",
-      "xorg-x11-fonts-100dpi",
-      "xorg-x11-fonts-75dpi",
-      "xorg-x11-fonts-ISO8859-1-100dpi",
-      "xorg-x11-fonts-ISO8859-1-75dpi",
-      "xorg-x11-fonts-Type1",
-      "xorg-x11-fonts-misc",
-      "xorg-x11-fonts-truetype",
-      "xorg-x11-server-Xorg",
-      "xorg-x11-xauth",
-      "xorg-x11-xfs",
-      "xorg-x11-xinit",
-      "xorg-x11-twm",
-      "xterm"
-    ]
-  end
+when "redhat","centos","scientific","amazon","scientific","oracle"
+  default['x11']['packages'] = %w{ 
+    bitmap-fonts
+    desktop-backgrounds-basic
+    xorg-x11-drivers
+    xorg-x11-fonts-100dpi
+    xorg-x11-fonts-75dpi
+    xorg-x11-fonts-ISO8859-1-100dpi
+    xorg-x11-fonts-ISO8859-1-75dpi
+    xorg-x11-fonts-Type1
+    xorg-x11-fonts-misc
+    xorg-x11-fonts-truetype
+    xorg-x11-server-Xorg
+    xorg-x11-xauth
+    xorg-x11-xfs
+    xorg-x11-xinit
+    xorg-x11-twm
+    xterm
+  }
 else
   default['x11']['packages'] = [
     'xserver-xorg',
